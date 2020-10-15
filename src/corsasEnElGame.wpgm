@@ -1,7 +1,24 @@
 import wollok.game.*
+import model.rodados.*
 
 program corsasEnElGame {
-	// hacer las inicializaciones necesarias 
+	game.width(10)
+	game.height(7)
+	game.title("Rodados")
+	
+	
+	var corsa1 = new Corsa(color = "Rojo")
+	game.addVisual(corsa1)
+	
+	keyboard.r().onPressDo{corsa1.cambiaARojo()}
+	keyboard.v().onPressDo{corsa1.cambiaAVerde()}
+	keyboard.a().onPressDo{corsa1.cambiaAAzul()}
+	keyboard.up().onPressDo{corsa1.moverArriba()}
+	keyboard.down().onPressDo{corsa1.moverAbajo()}	
+	keyboard.left().onPressDo{corsa1.moverIzquierda()}
+	keyboard.right().onPressDo{corsa1.moverDerecha()}
 	
 	game.start()
 }
+
+
