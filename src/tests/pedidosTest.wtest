@@ -1,0 +1,14 @@
+import model.dependencias.*
+import model.rodados.*
+import model.pedidos.*
+
+
+test "pedidos" {
+	
+	const pedido = new Pedidos(distancia = 960, tiempoMaxViaje = 8, cantPasajeros = 4, coloresIncompatibles = ["Azul", "Negro"])
+	const cachito = new Corsa(color = "Rojo")
+	assert.that(pedido.puedeSatisfacerViaje(cachito))
+	
+	pedido.coloresIncompatibles(["Azul", "Negro", "Rojo"])
+	assert.notThat(pedido.puedeSatisfacerViaje(cachito))
+}
